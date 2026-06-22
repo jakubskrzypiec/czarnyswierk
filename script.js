@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const preloader = document.querySelector(".preloader");
+  const loader = document.querySelector(".loader");
   document.body.classList.add("is-loading");
 
   setTimeout(() => {
-    preloader?.classList.add("is-hidden");
+    loader?.classList.add("is-hidden");
     document.body.classList.remove("is-loading");
-  }, 2450);
+  }, 2350);
 
   const revealItems = document.querySelectorAll(".reveal");
   const revealObserver = new IntersectionObserver((entries) => {
@@ -35,42 +35,78 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", () => {
     if (!header) return;
 
-    const y = window.scrollY;
-    if (y > lastY && y > 120) {
+    const currentY = window.scrollY;
+
+    if (currentY > lastY && currentY > 140) {
       header.style.transform = "translateX(-50%) translateY(-140%)";
       header.style.opacity = "0";
     } else {
       header.style.transform = "translateX(-50%) translateY(0)";
       header.style.opacity = "1";
     }
-    lastY = Math.max(y, 0);
+
+    lastY = Math.max(currentY, 0);
   }, { passive: true });
 
-  const tabs = document.querySelectorAll(".tab-btn");
-  const panels = document.querySelectorAll(".tab-panel");
+  const heroBg = document.querySelector(".hero-bg img");
 
-  tabs.forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = button.dataset.tab;
+  const updateHeroParallax = () => {
+    if (!heroBg) return;
+    const y = Math.min(window.scrollY, window.innerHeight);
+    heroBg.style.transform = `scale(1.04) translateY(${y * 0.12}px)`;
+  };
+
+  window.addEventListener("scroll", updateHeroParallax, { passive: true });
+  updateHeroParallax();
+
+  const tabs = document.querySelectorAll(".tab");
+  const menuLists = document.querySelectorAll(".menu-list");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = tab.dataset.target;
 
       tabs.forEach((item) => item.classList.remove("active"));
-      panels.forEach((panel) => panel.classList.remove("active"));
+      menuLists.forEach((list) => list.classList.remove("active"));
 
-      button.classList.add("active");
+      tab.classList.add("active");
       document.querySelector(`#${target}`)?.classList.add("active");
     });
   });
 
-  const gallery = document.querySelector(".horizontal-gallery");
+  const pathSection = document.querySelector(".forest-path");
+  const pathOrbit = document.querySelector("#pathOrbit");
+  const pathCopy = document.querySelector(".path-copy");
+
+  const updatePath = () => {
+    if (!pathSection || !pathOrbit || !pathCopy || window.innerWidth <= 700) return;
+
+    const rect = pathSection.getBoundingClientRect();
+    const total = pathSection.offsetHeight - window.innerHeight;
+    const progress = Math.min(Math.max(-rect.top / total, 0), 1);
+    const rotate = progress * 260;
+    const scale = 0.82 + progress * 1.25;
+    const shift = 18 - progress * 18;
+
+    pathOrbit.style.transform = `translateX(${shift}vw) rotate(${rotate}deg) scale(${scale})`;
+    pathCopy.style.opacity = Math.max(0.25, 1 - progress * 1.45);
+    pathCopy.style.transform = `translateY(${-progress * 36}px)`;
+  };
+
+  window.addEventListener("scroll", updatePath, { passive: true });
+  window.addEventListener("resize", updatePath);
+  updatePath();
+
+  const gallery = document.querySelector(".gallery");
   const track = document.querySelector("#galleryTrack");
 
   const updateGallery = () => {
-    if (!gallery || !track || window.innerWidth <= 680) return;
+    if (!gallery || !track || window.innerWidth <= 700) return;
 
     const rect = gallery.getBoundingClientRect();
-    const total = gallery.offsetHeight - window.innerHeight;
-    const progress = Math.min(Math.max(-rect.top / total, 0), 1);
-    const distance = track.scrollWidth - window.innerWidth + 160;
+    const start = window.innerHeight * 0.75;
+    const progress = Math.min(Math.max((start - rect.top) / (gallery.offsetHeight * 0.62), 0), 1);
+    const distance = track.scrollWidth - window.innerWidth + 120;
 
     track.style.transform = `translateX(${-distance * progress}px)`;
   };
@@ -79,32 +115,26 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateGallery);
   updateGallery();
 
-  const cursor = document.querySelector(".cursor-dot");
+  const tiltItems = document.querySelectorAll("[data-tilt]");
 
-  if (cursor && window.matchMedia("(pointer:fine)").matches) {
-    window.addEventListener("mousemove", (event) => {
-      cursor.style.opacity = "1";
-      cursor.style.left = `${event.clientX}px`;
-      cursor.style.top = `${event.clientY}px`;
+  tiltItems.forEach((item) => {
+    item.addEventListener("mousemove", (event) => {
+      const rect = item.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+      item.style.transform = `rotateY(${x * 4}deg) rotateX(${-y * 4}deg)`;
     });
 
-    document.querySelectorAll("a, button").forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        cursor.style.width = "44px";
-        cursor.style.height = "44px";
-      });
-
-      item.addEventListener("mouseleave", () => {
-        cursor.style.width = "18px";
-        cursor.style.height = "18px";
-      });
+    item.addEventListener("mouseleave", () => {
+      item.style.transform = "rotateY(0deg) rotateX(0deg)";
     });
-  }
+  });
 
   const form = document.querySelector("form");
 
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
-    alert("Rezerwacja demo — w gotowej stronie formularz można podpiąć pod mail lub system rezerwacji.");
+    alert("Formularz demo — w finalnej wersji można go podpiąć pod mail lub system rezerwacji.");
   });
 });
