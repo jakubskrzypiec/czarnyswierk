@@ -5,241 +5,222 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Czarny Świerk | Restauracja w lesie</title>
-  <meta name="description" content="Czarny Świerk — restauracja w lesie. Nowoczesna kuchnia, sezonowe menu i kolacja wśród drzew.">
+  <meta name="description" content="Czarny Świerk — nowoczesna restauracja w lesie. Sezonowe menu, ciemna elegancja i kolacja wśród drzew.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="grain"></div>
+  <div class="page-noise"></div>
 
-  <div class="loader" aria-hidden="true">
-    <div class="loader-symbol">
-      <img src="logo.png" alt="">
+  <div class="intro-loader" aria-hidden="true">
+    <div class="intro-frame">
+      <img src="logo-biale.png" alt="">
+      <span></span>
+      <p>restauracja w lesie</p>
     </div>
-    <div class="loader-line"></div>
-    <p>restauracja w lesie</p>
   </div>
 
-  <header class="site-header">
+  <header class="topbar">
     <a href="#start" class="brand" aria-label="Czarny Świerk">
-      <img src="logo.png" alt="Czarny Świerk">
+      <img src="logo-biale.png" alt="Czarny Świerk">
     </a>
 
-    <nav class="nav" aria-label="Menu główne">
+    <nav class="nav" aria-label="Menu strony">
       <a href="#start">Start</a>
-      <a href="#historia">Historia</a>
+      <a href="#koncepcja">Koncepcja</a>
       <a href="#menu">Menu</a>
       <a href="#galeria">Galeria</a>
-      <a href="#kontakt">Rezerwacje</a>
+      <a href="#rezerwacje">Rezerwacje</a>
     </nav>
 
-    <a href="#kontakt" class="nav-reserve">Stolik</a>
+    <a href="#rezerwacje" class="topbar-btn">Stolik</a>
   </header>
 
   <main>
     <section class="hero" id="start">
-      <div class="hero-bg" data-parallax="0.18">
-        <img src="hero.png" alt="">
+      <div class="hero-image">
+        <img src="hero.png" alt="Restauracja Czarny Świerk w lesie">
       </div>
 
-      <div class="hero-fog"></div>
-      <div class="hero-vignette"></div>
+      <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <div class="hero-logo reveal">
-          <img src="logo.png" alt="Czarny Świerk">
+        <div class="hero-eyebrow reveal">
+          <span>leśna restauracja</span>
+          <span>sezonowe menu</span>
+          <span>czw–nd / 17:00–23:00</span>
         </div>
 
-        <div class="hero-title reveal">
-          <span>nowoczesna restauracja w lesie</span>
-          <h1>Kolacja, która zaczyna się od ciszy.</h1>
-        </div>
+        <h1 class="reveal">
+          Ciemny las.<br>
+          Ciepły stół.
+        </h1>
 
-        <p class="hero-lead reveal">
-          Ciemny kamień, ciepłe światło, zapach mokrego lasu i sezonowe menu podawane
-          w miejscu ukrytym między drzewami.
+        <p class="reveal">
+          Czarny Świerk to restauracja ukryta pomiędzy drzewami — nowoczesna kuchnia,
+          przygaszone światło i wnętrze, które po zmroku staje się częścią lasu.
         </p>
 
         <div class="hero-actions reveal">
-          <a href="#menu" class="btn btn-light">Zobacz menu</a>
-          <a href="#kontakt" class="btn btn-ghost">Zarezerwuj stolik</a>
+          <a href="#menu" class="button button-light">Zobacz menu</a>
+          <a href="#rezerwacje" class="button button-outline">Zarezerwuj</a>
         </div>
       </div>
 
-      <div class="hero-meta reveal">
+      <aside class="hero-card reveal">
+        <img src="logo-biale.png" alt="">
         <div>
-          <span>Otwarte</span>
-          <strong>czw–nd</strong>
-          <p>17:00 — 23:00</p>
+          <strong>Kolacja wśród drzew</strong>
+          <p>kameralna sala / ogień / natura / ciemna elegancja</p>
         </div>
-        <div>
-          <span>Kuchnia</span>
-          <strong>sezonowa</strong>
-          <p>las / ogień / zioła</p>
-        </div>
-      </div>
-
-      <div class="scroll-mark">
-        <span></span>
-        scroll
-      </div>
+      </aside>
     </section>
 
-    <section class="statement" id="historia">
-      <div class="statement-number reveal">01</div>
-
-      <div class="statement-copy">
-        <p class="kicker reveal">doświadczenie</p>
-        <h2 class="reveal">Miejsce stworzone dla ludzi, którzy nie chcą kolejnej zwykłej kolacji.</h2>
+    <section class="concept" id="koncepcja">
+      <div class="concept-copy">
+        <p class="section-label reveal">Koncepcja</p>
+        <h2 class="reveal">Restauracja, która nie wygląda jak restauracja przy drodze.</h2>
       </div>
 
-      <div class="statement-side reveal">
-        <p>
-          Czarny Świerk łączy architekturę ukrytą w zieleni, kuchnię opartą na sezonie
-          i atmosferę, która działa wolniej niż miasto.
-        </p>
-      </div>
-    </section>
-
-    <section class="cinematic-split">
-      <div class="split-media reveal" data-tilt>
-        <img src="1.png" alt="Restauracja w lesie">
-      </div>
-
-      <div class="split-text reveal">
-        <p class="kicker">architektura</p>
-        <h2>Budynek znika w lesie po zmroku.</h2>
-        <p>
-          Szklane ściany odbijają drzewa, a wnętrze świeci ciepłem jak latarnia.
-          To nie jest miejsce przy drodze — to cel sam w sobie.
-        </p>
-      </div>
-    </section>
-
-    <section class="ritual-section">
-      <div class="ritual-head reveal">
-        <p class="kicker">rytuał wieczoru</p>
-        <h2>Trzy powody, dla których goście zostają dłużej.</h2>
-      </div>
-
-      <div class="ritual-grid">
-        <article class="ritual-card reveal">
-          <div class="card-line"></div>
+      <div class="concept-grid">
+        <article class="concept-text reveal">
           <span>01</span>
-          <h3>Sezon</h3>
-          <p>Menu reaguje na pogodę, lokalne składniki i rytm lasu.</p>
+          <h3>Ukryta architektura</h3>
+          <p>
+            Ciemna bryła, szkło i beton tworzą spokojny kontrast z zielenią lasu.
+            Budynek jest widoczny dopiero wtedy, gdy gość jest już blisko wejścia.
+          </p>
         </article>
 
-        <article class="ritual-card reveal">
-          <div class="card-line"></div>
+        <article class="concept-text reveal">
           <span>02</span>
-          <h3>Ogień</h3>
-          <p>Dym, grill, masło ziołowe i głębokie sosy budują ciemny charakter dań.</p>
+          <h3>Kuchnia sezonowa</h3>
+          <p>
+            Menu zmienia się z porą roku. Las jest inspiracją, ale nie dekoracją —
+            pojawia się w ziołach, grzybach, dymie, sosach i sposobie podania.
+          </p>
         </article>
 
-        <article class="ritual-card reveal">
-          <div class="card-line"></div>
-          <span>03</span>
-          <h3>Cisza</h3>
-          <p>Mało stolików, dużo przestrzeni i światło, które nie przeszkadza rozmowie.</p>
-        </article>
+        <figure class="concept-photo reveal">
+          <img src="1.png" alt="Nowoczesna restauracja w lesie">
+        </figure>
+      </div>
+    </section>
+
+    <section class="experience">
+      <div class="experience-bg">
+        <img src="2.png" alt="Wnętrze restauracji Czarny Świerk">
+      </div>
+
+      <div class="experience-panel reveal">
+        <p class="section-label">Doświadczenie</p>
+        <h2>Najpierw słychać ciszę. Potem widać światło.</h2>
+        <p>
+          Ścieżka prowadzi przez drzewa, a wejście nie zdradza wszystkiego od razu.
+          To celowe — kolacja zaczyna się zanim gość usiądzie przy stole.
+        </p>
+      </div>
+
+      <div class="experience-list reveal">
+        <div><span>01</span><strong>mało stolików</strong></div>
+        <div><span>02</span><strong>widok na las</strong></div>
+        <div><span>03</span><strong>ciepły bar</strong></div>
+        <div><span>04</span><strong>menu sezonowe</strong></div>
       </div>
     </section>
 
     <section class="menu-section" id="menu">
-      <div class="menu-bg-word">MENU</div>
-
-      <div class="menu-head reveal">
-        <p class="kicker">menu sezonowe</p>
-        <h2>Las na talerzu. Ogień w tle.</h2>
+      <div class="menu-title reveal">
+        <p class="section-label">Menu</p>
+        <h2>Krótka karta. Mocny charakter.</h2>
       </div>
 
-      <div class="menu-showcase">
-        <div class="menu-image reveal">
-          <img src="4.png" alt="Bar i wnętrze restauracji">
+      <div class="menu-board reveal">
+        <div class="menu-tabs">
+          <button class="tab is-active" data-menu="startery">Startery</button>
+          <button class="tab" data-menu="glowne">Dania główne</button>
+          <button class="tab" data-menu="desery">Desery</button>
+          <button class="tab" data-menu="bar">Bar</button>
         </div>
 
-        <div class="menu-panel reveal">
-          <div class="tabs" role="tablist" aria-label="Menu">
-            <button class="tab active" data-target="startery">Startery</button>
-            <button class="tab" data-target="glowne">Główne</button>
-            <button class="tab" data-target="desery">Desery</button>
-            <button class="tab" data-target="bar">Bar</button>
-          </div>
-
-          <div class="menu-list active" id="startery">
+        <div class="menu-content">
+          <div class="menu-list is-active" id="startery">
             <article><span>Tatar z pstrąga / jałowiec / ogórek</span><strong>34 zł</strong></article>
             <article><span>Krem z leśnych grzybów / oliwa świerkowa</span><strong>28 zł</strong></article>
             <article><span>Chleb żytni / masło palone / sól</span><strong>19 zł</strong></article>
           </div>
 
           <div class="menu-list" id="glowne">
-            <article><span>Jeleń / seler / czarny bez / sos pieczeniowy</span><strong>74 zł</strong></article>
-            <article><span>Pstrąg / masło ziołowe / ziemniak / koper</span><strong>62 zł</strong></article>
+            <article><span>Jeleń / seler / czarny bez</span><strong>74 zł</strong></article>
+            <article><span>Pstrąg / masło ziołowe / młody ziemniak</span><strong>62 zł</strong></article>
             <article><span>Risotto leśne / grzyby / dojrzewający ser</span><strong>48 zł</strong></article>
           </div>
 
           <div class="menu-list" id="desery">
-            <article><span>Miodownik / śmietana palona / pył z orzecha</span><strong>24 zł</strong></article>
+            <article><span>Miodownik / śmietana palona</span><strong>24 zł</strong></article>
             <article><span>Mus czekoladowy / świerk / sól</span><strong>22 zł</strong></article>
-            <article><span>Lody jałowcowe / kruszonka / karmel</span><strong>21 zł</strong></article>
+            <article><span>Lody jałowcowe / kruszonka</span><strong>21 zł</strong></article>
           </div>
 
           <div class="menu-list" id="bar">
             <article><span>Świerk / gin / limonka / tonik</span><strong>28 zł</strong></article>
-            <article><span>Mgiełka / zioła / jabłko / wódka</span><strong>30 zł</strong></article>
+            <article><span>Mgiełka / jabłko / zioła / wódka</span><strong>30 zł</strong></article>
             <article><span>Dymny las / whisky / miód / bitter</span><strong>34 zł</strong></article>
           </div>
         </div>
       </div>
+
+      <figure class="menu-image reveal">
+        <img src="4.png" alt="Bar restauracji">
+      </figure>
     </section>
 
-    <section class="forest-path">
-      <div class="path-sticky">
-        <div class="path-copy">
-          <p class="kicker">ścieżka</p>
-          <h2>Najpierw las. Dopiero potem światło.</h2>
-          <p>Przy scrollowaniu wejście prowadzi przez kolejne warstwy: cień, zieleń, ogień i stół.</p>
-        </div>
+    <section class="gallery-section" id="galeria">
+      <div class="gallery-head reveal">
+        <p class="section-label">Galeria</p>
+        <h2>Obrazy mają robić klimat, nie tylko wypełniać stronę.</h2>
+      </div>
 
-        <div class="path-orbit" id="pathOrbit">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <div class="gallery-grid">
+        <figure class="gallery-large reveal">
+          <img src="3.png" alt="Restauracja nocą w lesie">
+          <figcaption>wieczór / światło / ścieżka</figcaption>
+        </figure>
+
+        <figure class="reveal">
+          <img src="2.png" alt="Wnętrze restauracji z widokiem na las">
+          <figcaption>wnętrze / szkło / las</figcaption>
+        </figure>
+
+        <figure class="reveal">
+          <img src="4.png" alt="Bar restauracji">
+          <figcaption>bar / kamień / zieleń</figcaption>
+        </figure>
+
+        <figure class="gallery-wide reveal">
+          <img src="5.png" alt="Wejście do restauracji">
+          <figcaption>wejście / mokry kamień / cisza</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="gallery" id="galeria">
-      <div class="gallery-intro reveal">
-        <p class="kicker">galeria</p>
-        <h2>Kadry, które sprzedają klimat bez tłumaczenia.</h2>
+    <section class="reservation" id="rezerwacje">
+      <div class="reservation-image reveal">
+        <img src="5.png" alt="Wejście do restauracji Czarny Świerk">
       </div>
 
-      <div class="gallery-track" id="galleryTrack">
-        <figure><img src="2.png" alt=""><figcaption>wnętrze / las za szkłem</figcaption></figure>
-        <figure><img src="3.png" alt=""><figcaption>wieczór / światło</figcaption></figure>
-        <figure><img src="4.png" alt=""><figcaption>bar / kamień / zieleń</figcaption></figure>
-        <figure><img src="5.png" alt=""><figcaption>wejście / ścieżka</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="reservation" id="kontakt">
-      <div class="reservation-bg">
-        <img src="5.png" alt="">
-      </div>
-
-      <div class="reservation-card reveal">
-        <p class="kicker">rezerwacje</p>
-        <h2>Zarezerwuj stolik przy oknie.</h2>
+      <div class="reservation-box reveal">
+        <img src="logo-biale.png" alt="Czarny Świerk">
+        <p class="section-label">Rezerwacje</p>
+        <h2>Stolik przy lesie nie powinien być przypadkiem.</h2>
         <p>
-          Czarny Świerk przyjmuje rezerwacje od czwartku do niedzieli.
-          Najlepsze miejsca są najbliżej lasu.
+          Rezerwacje przyjmowane są od czwartku do niedzieli. Najlepsze miejsca znajdują się
+          przy szklanej ścianie od strony lasu.
         </p>
 
         <form>
@@ -259,7 +240,7 @@
           </label>
 
           <label>
-            Liczba osób
+            Osoby
             <select>
               <option>2 osoby</option>
               <option>3–4 osoby</option>
@@ -275,8 +256,8 @@
   </main>
 
   <footer class="footer">
-    <img src="logo.png" alt="Czarny Świerk">
-    <p>© 2026 Czarny Świerk — restauracja w lesie</p>
+    <img src="logo-biale.png" alt="Czarny Świerk">
+    <p>Czarny Świerk — restauracja w lesie / projekt koncepcyjny</p>
     <a href="#start">wróć na górę</a>
   </footer>
 
